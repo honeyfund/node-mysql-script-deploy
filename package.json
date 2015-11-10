@@ -17,8 +17,8 @@
   "author": "fixiecoder",
   "license": "MIT",
   "dependencies": {
-    "MD5": "^1.2.2",
     "async": "~1.3.0",
+    "md5": "^2.0.0",
     "mysql": "~2.7.0"
   },
   "devDependencies": {

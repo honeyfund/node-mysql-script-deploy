@@ -6,7 +6,7 @@ whether in the development environent or production.
 
 ## Installation
 ```
-sudo npm install mysql-script-deploy --save
+$ npm install mysql-script-deploy --save
 ```
 
 
@@ -15,20 +15,22 @@ sudo npm install mysql-script-deploy --save
 Call scriptDeploy method at the end of your main script before your app finishes starting. In an ExpressJS app I place the app.listen() inside the callback function so my server won't start untill all the scripts have deployed.
 
 ```javascript
-var scriptDeploy = require('mysql-script-deploy ');
+var scriptDeploy = require('mysql-script-deploy');
 
 var options = {
-    host 				: 'example_host',
-    user 				: 'username',
-    password 			: 'password',
-    database 			: 'example_database',
-    schemaLocation		: path.join(__dirname, 'databaseScripts', 'schemaScripts'), 
-    routinesLocation	: path.join(__dirname, 'databaseScripts', 'routineScripts') 
+    host            : 'example_host',
+    port            : 3306,
+    user            : 'username',
+    password        : 'password',
+    database        : 'example_database',
+    schemaLocation  : path.join(__dirname, 'databaseScripts', 'schemaScripts'), 
+    routinesLocation: path.join(__dirname, 'databaseScripts', 'routineScripts'),
+    disableLocking  : false 
 };
 
 scriptDeploy(options, function(err) {
-	if (err) throw err;
-	app.listen(3000);
+  if (err) throw err;
+  app.listen(3000);
 });
 ```
 
@@ -65,12 +67,14 @@ END
 
 ## Options
 
-  - host: The database host name/IP address for the MySql database server you wish to connect to.
-  - user : The database username you wish to use to connect to the database. This user must have all the rights that your stored procdures and functions require aswell as the rights to perform the functions in the schema scripts.
+  - host: The database host name/IP address for the MySql database server you wish to connect to. (default `localhost`)
+  - port: specify the database port (default `3306`)
+  - user: The database username you wish to use to connect to the database. This user must have all the rights that your stored procdures and functions require aswell as the rights to perform the functions in the schema scripts.
   - password: The database password for the above user.
   - database: The name of the database that you wish to run all the scripts on.
   - schemaLocation: The folder location of the schema change scripts, this should be an absolute path.
   - routinesLocation: The folder location of the schema change scripts, this should be an absolute path.
+  - disableLocking: Set to `true` if you do not wish to lock the database from other instances of mysql-script-deploy from making concurrent changes. (default `false`)
 
 ## Create database
 
@@ -87,8 +91,6 @@ These tables are:
 
 ## Locking
 
-When running, mysql-script-deploy locks itself to prevent other instances of mysql-script-deploy from running at the same time. This lock only lasts for two minutes so please be patient.
+When running, mysql-script-deploy locks itself to prevent other instances of mysql-script-deploy from running at the same time. This lock only lasts for two minutes so please be patient. 
 
-
-
-
+During development or if you only ever wish to connect one instance to the database, you can use the `disableLocking` flag in options.

@@ -1,8 +1,12 @@
 {
   "name": "mysql-script-deploy",
   "version": "1.0.1",
-  "description": "Deploys your schema changes and routines, it versions all your changes and roles back failed routines to previous versions",
-  "main": "lib/index.js",
+  "description": "Deploys your schema changes and routines, it rollss back failed routines to previous versions",
+  "main": "index.js",
+  "preferGlobal": true,
+  "bin": {
+    "mysql-deploy": "index.js"
+  },
   "scripts": {
     "test": "mocha"
   },
@@ -14,10 +18,12 @@
     "stored",
     "procedures"
   ],
-  "author": "fixiecoder",
-  "license": "MIT",
+  "author": "Gabriel McAdams",
+  "license": "UNLICENSED",
   "dependencies": {
     "async": "~1.3.0",
+    "chalk": "^1.1.3",
+    "commander": "^2.9.0",
     "md5": "^2.0.0",
     "mysql": "~2.7.0"
   },

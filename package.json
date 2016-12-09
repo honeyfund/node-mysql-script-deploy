@@ -1,14 +1,14 @@
 {
   "name": "mysql-script-deploy",
-  "version": "1.0.1",
-  "description": "Deploys your schema changes and routines, it rollss back failed routines to previous versions",
+  "version": "1.0.0",
+  "description": "Deploys your schema changes and routines, and rolls back failed routines to previous versions",
   "main": "index.js",
   "preferGlobal": true,
   "bin": {
     "mysql-deploy": "index.js"
   },
   "scripts": {
-    "test": "mocha"
+    "test": "echo 'not implemented.'"
   },
   "keywords": [
     "MySql",
@@ -26,10 +26,5 @@
     "commander": "^2.9.0",
     "md5": "^2.0.0",
     "mysql": "~2.7.0"
-  },
-  "devDependencies": {
-    "chai": "^3.4.1",
-    "mocha": "^2.3.3",
-    "sinon": "^1.17.2"
   }
 }

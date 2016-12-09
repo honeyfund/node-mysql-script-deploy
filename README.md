@@ -6,8 +6,10 @@ whether in the development environent or production.
 
 ## Installation
 ```
-$ npm install mysql-deploy --g
+$ npm install -g
 ```
+
+this is not the same as `npm install` in that it does not just install dependencies.  Instead, it installs the current folder as a global module.
 
 
 ## Usage

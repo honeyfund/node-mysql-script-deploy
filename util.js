@@ -3,8 +3,8 @@ module.exports = {
     var db = {
         host : 'localhost',
         port : 3306,
-        user : 'user',
-        password : 'password',
+        user : null,
+        password : null,
         database : 'database'
     };
 
@@ -27,7 +27,7 @@ module.exports = {
     if (atPosition > 0) {
       var userPass = check.substring(0, atPosition).split(':');
       db.user = userPass[0];
-      db.password = userPass[1];
+      db.password = userPass[1] || null;
       check = check.slice(atPosition + 1);
     }
 

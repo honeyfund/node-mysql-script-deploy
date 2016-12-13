@@ -21,8 +21,8 @@ program
 	    consoleWriter.log('    target:    The MySQL database (EX: user:pass@localhost:33306/database)');
 	    consoleWriter.log('         follow this format:');
 	    consoleWriter.log('            [user:pass@]<hostname>[:port]/<db>');
-	    consoleWriter.log('               user: defaults to root.');
-	    consoleWriter.log('               pass: defaults to root.');
+	    consoleWriter.log('               user: required');
+	    consoleWriter.log('               pass: optional');
 	    consoleWriter.log('               hostname: the name of your server where your database resides (required)');
 	    consoleWriter.log('               port: defaults to 3306.');
 	    consoleWriter.log('               db: the name of your database (required)');

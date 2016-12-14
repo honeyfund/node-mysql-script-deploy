@@ -35,7 +35,7 @@ module.exports = {
 
     // Split the rest for hostname and port
     var parts = check.split(':');
-    db.hostname = parts[0];
+    db.host = parts[0];
 
     if (parts.length > 1) {
       var port = Number(parts[1]);

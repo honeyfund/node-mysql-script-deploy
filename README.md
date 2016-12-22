@@ -18,6 +18,10 @@ this is not the same as `npm install` in that it does not just install dependenc
 $ mysql-deploy user:pass@host:port/database -d <path/to/database/scripts>
 
 $ mysql-deploy user:pass@host:port/database -s <path/to/database/schema/scripts> -r <path/to/database/routine/scripts>
+
+$ MYSQL_DEPLOY=user:pass@host:port/database
+$ mysql-deploy MYSQL_DEPLOY -d <path/to/database/scripts>  //where MYSQL_DEPLOY is an environment variable 
+
 ```
 
 For more information, type this:

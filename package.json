@@ -1,6 +1,6 @@
 {
   "name": "mysql-script-deploy",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Deploys your schema changes and routines, and rolls back failed routines to previous versions",
   "main": "index.js",
   "preferGlobal": true,

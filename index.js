@@ -7,7 +7,7 @@ var utils = require('./util.js');
 var consoleWriter = require('./lib/consoleWriter.js');
 
 program
-	.version('1.0.0')
+	.version('1.0.1')
 	.description('MySQL Deployment')
 	.usage('<target> [options]')
 	.option('-d, --db <path>', 'Path to database files')
